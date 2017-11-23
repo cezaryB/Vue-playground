@@ -2,12 +2,17 @@
 new Vue({
   el: '#root',
   data: {
-    message: 'Hello from Vue'
+    age: 25,
+    x: 0,
+    y: 0
   },
   methods: {
-    greet: function(name) {
-      const msg = this.message
-      return `${msg} ${name}!`
+    changeAge: function(amount) {
+      this.age += amount
+    },
+    moving: function(event) {
+      this.x = event.screenX
+      this.y = event.screenY
     }
   }
 })

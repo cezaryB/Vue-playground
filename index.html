@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Vue JS playground</title>
-    <link ref='stylesheet' href='styles.css' />
+    <link rel='stylesheet' href='styles.css' />
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/vue'></script>
   </head>
   <body>
     <div id='root'>
-      <h1>{{ message }}</h1>
-      <h1>{{ greet('Andrzej') }}</h1>
+      <h1>Events</h1>
+      <p>My age is {{ age }}</p>
+      <button v-on:click='changeAge(1)'>Add one</button>
+      <button v-on:click='changeAge(-1)'>Substract one </button>
+      <button v-on:dblclick='changeAge(2)'>Add two</button>
+      <button v-on:dblclick='changeAge(-2)'>Substract two</button>
+      <div v-on:mousemove='moving' id='canvas'>{{ x }} {{ y }}</div>
     </div>
     <script type='text/javascript' src='./app.js'></script>
   </body>
